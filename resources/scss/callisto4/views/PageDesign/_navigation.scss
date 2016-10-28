@@ -1,4 +1,6 @@
-nav.nav-bar ul.nav li.dropdown:hover .dropdown-menu{
+//Open dropdowns on hover
+
+nav.navbar ul.nav li.dropdown:hover .dropdown-menu{
 	display: block;
 	margin-top:0px;
 }
