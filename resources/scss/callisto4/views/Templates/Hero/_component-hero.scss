@@ -57,7 +57,7 @@
 			.hero-category-inner{
 				bottom: 0;
 				left: 0;
-				background-color: rgba(white, .8);
+				background-color: rgba($white, .8);
 
 			    @include clearfix();
 			}
@@ -101,7 +101,7 @@
 		}
 
 		.hero-category-headline{
-			background-color: rgba(white, .9);
+			background-color: rgba($white, .9);
 		    padding: .5em;
 		    text-align: right;
 		    display: inline-block;
@@ -111,7 +111,7 @@
 		}
 
 		.hero-category-cta{
-			background-color: rgba(white, .9);
+			background-color: rgba($white, .9);
 		    padding: .5em;
 		    text-align: right;
 		    width: fit-content;
@@ -151,11 +151,11 @@
 		}
 
 		.hero-category:nth-last-child(n+2):nth-last-child(-n+2):first-child{
-			border-right: .5rem solid white;
+			border-right: .5rem solid $white;
 		}
 
 		.hero-category:nth-last-child(n+2):nth-last-child(-n+2):first-child ~ .hero-category { 
-			border-left: .5rem solid white;
+			border-left: .5rem solid $white;
 		}
 	}
 

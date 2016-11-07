@@ -37,7 +37,7 @@
 				&[aria-expanded="true"],
 				&:hover{
 					background-color: $brand-primary;
-					color: white;
+					color: $white;
 				}
 			}
 			
@@ -92,7 +92,7 @@
 		.control-basket{
 			.toggle-basket-preview{
 				background-color: $brand-primary;
-				color:white;
+				color:$white;
 
 				.badge{
 					margin-left: .5rem;

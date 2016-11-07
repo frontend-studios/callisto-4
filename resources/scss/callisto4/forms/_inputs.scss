@@ -1,7 +1,7 @@
 
 $color: $gray-dark;
-$background: white;
-$active-background: white;
+$background: $white;
+$active-background: $white;
 $border-color: $gray-lighter;
 $border-active: $gray-light;
 $border-width: 1px;
@@ -132,7 +132,7 @@ $border-width: 1px;
 
         i{
             background-color: $brand-danger;
-            color: white;
+            color: $white;
         }
 
     }
@@ -151,7 +151,7 @@ $border-width: 1px;
 
         i{
             background-color:$brand-success;
-            color: white;
+            color: $white;
         }
         
     }

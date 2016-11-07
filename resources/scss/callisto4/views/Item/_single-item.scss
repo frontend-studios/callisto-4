@@ -203,7 +203,7 @@
                     &:hover {
                         border:1px solid $nav-tabs-border-color;
                         color: $gray;
-                        background:white;
+                        background:$white;
                     }
                     &.active {
                         border-bottom: 1px solid transparent;

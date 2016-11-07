@@ -55,11 +55,11 @@
 
 			& + .item-inner{
 				background-color: $brand-primary;
-				color: white;
+				color: $white;
 			}
 
 			& + .item-inner .item-edit .fa:hover{
-				color: white;
+				color: $white;
 			}
 		}
 
