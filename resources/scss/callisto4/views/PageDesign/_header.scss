@@ -1,4 +1,25 @@
 //header scss
+
+.wrapper-main.sticky {
+	.top-bar {
+		position: fixed;
+    	width: 100%;
+	}
+	& > .container-max {
+		position: fixed;
+	    display: block;
+	    width: 100%;
+	    top: 30px;
+	    left: 50%;
+	    transform: translateX(-50%);
+	    background: $gray-lightest;
+	    z-index: 2000;
+	}
+	#page-body {
+		padding-top: 119px;
+	}
+}
+
 .top-bar{
 
 	position: relative;
