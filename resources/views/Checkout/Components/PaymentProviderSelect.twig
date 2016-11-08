@@ -14,7 +14,7 @@
                     <div class="icon">
                         <div class="square-container">
                             <div class="square-inner center-xy">
-                              <img src="https://placehold.it/60x60">
+                              <img :src="paymentProvider.icon">
                             </div>
                         </div>
                     </div><!--
@@ -22,7 +22,12 @@
                     ${ paymentProvider.name }
                         <div>
                             <small>
-                                (${ paymentProvider.fee | currency })
+                                ${ paymentProvider.fee | currency }
+                            </small>
+                        </div>
+                        <div>
+                            <small>
+                                ${ paymentProvider.description }
                             </small>
                         </div>
                     </div>

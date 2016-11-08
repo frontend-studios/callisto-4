@@ -1,3 +1,4 @@
+{% import "PluginCallisto::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
 {{ component( "PluginCallisto::Basket.Components.BasketList" ) }}
 {{ component( "PluginCallisto::Basket.Components.BasketTotals" ) }}
 
@@ -26,21 +27,20 @@
 
             <div class="row">
                 <div class="col-xs-12 col-sm-6 m-b-1">
-                    <a href="/basket" class="btn btn-outline-primary btn-block basketBtn" :class="{ 'disabled': basketItems.length <= 0 }" title="{{ trans("PluginCallisto::Callisto.basket") }}">
-                        {{ trans("PluginCallisto::Callisto.basket") }} <i class="fa fa-shopping-cart"></i>
+                    <a href="/basket" class="btn btn-outline-primary btn-block basketBtn" :class="{ 'disabled': basketItems.length <= 0 }" title="{{ trans("PluginCallisto::Callisto.basketToBasket") }}">
+                        {{ trans("PluginCallisto::Callisto.basketToBasket") }} <i class="fa fa-shopping-cart"></i>
                     </a>
                 </div>
 
                 <div class="col-xs-12 col-sm-6">
-                  {% if frontend.Account.getIsAccountLoggedIn %}
-                      <a href="/checkout" class="btn btn-primary btn-block checkOutBtn" title="{{ trans("PluginCallisto::Callisto.basketToCheckout") }}">
-                          {{ trans("PluginCallisto::Callisto.basketToCheckout") }} <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                      </a>
-                  {% else %}
-                    <a href="/login" class="btn btn-primary btn-block checkOutBtn" title="{{ trans("PluginCallisto::Callisto.basketToCheckout") }}">
+                    {{ LayoutContainer.show("PluginCallisto::BasketPreview.BeforeCheckoutButton") }}
+                    <a v-resource-if:user="isLoggedIn" href="/checkout" class="btn btn-primary btn-block checkOutBtn" title="{{ trans("PluginCallisto::Callisto.basketToCheckout") }}">
                         {{ trans("PluginCallisto::Callisto.basketToCheckout") }} <i class="fa fa-arrow-right" aria-hidden="true"></i>
                     </a>
-                  {% endif %}
+                    <a v-resource-if:user="!isLoggedIn" href="/login" class="btn btn-primary btn-block checkOutBtn" title="{{ trans("PluginCallisto::Callisto.basketToCheckout") }}">
+                        {{ trans("PluginCallisto::Callisto.basketToCheckout") }} <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                    {{ LayoutContainer.show("PluginCallisto::BasketPreview.AfterCheckoutButton") }}
                 </div>
             </div>
         </div>

@@ -28,6 +28,18 @@
         "type"      : "category_select"
     },
     {
+      "tab"       : "Categories",
+      "key"       : "global.category.privacy_policy",
+      "label"     : "Privacy policy",
+      "type"      : "category_select"
+    },
+    {
+      "tab"       : "Categories",
+      "key"       : "global.category.terms_and_conditions",
+      "label"     : "Terms and conditions",
+      "type"      : "category_select"
+    },
+    {
         "tab"                           : "Categories",
         "key"                           : "global.category.variation_show_type",
         "label"                         : "Show variations in overview",
@@ -322,7 +334,7 @@
             "itemProducerName_asc"              : "Variation custom number (ascending)",
             "itemProducerName_desc"             : "Variation custom number (descending)"
         },
-        "default"                   : "itemName_asc,itemName_desc,itemPrice_asc,itemPrice_desc,itemRating_desc,itemRand"
+        "default"                   : "itemName_asc, itemName_desc, itemPrice_asc, itemPrice_desc, itemRating_desc, itemRand"
     },
     {
         "tab"                       : "Pagination and sorting",
@@ -364,6 +376,13 @@
         "default"                   : "itemName_asc"
     },
     {
+        "tab"               : "MyAccount",
+        "key"               : "my_account.orders_per_page",
+        "label"             : "Number of orders to show per page in order history",
+        "type"              : "text",
+        "default"           : "5"
+    },
+    {
         "tab"               : "Log Settings",
         "key"               : "log.data",
         "label"             : "Enable logging options",
@@ -375,7 +394,8 @@
             "print_warnings"    : "Print warnings",
             "print_infos"       : "Print infos",
             "print_stack_trace" : "Print stack trace",
-            "log_messages"      : "Log messages"
+            "log_messages"      : "Log messages",
+            "show_error_code"   : "Show error codes"
         },
         "default"           : ""
     }

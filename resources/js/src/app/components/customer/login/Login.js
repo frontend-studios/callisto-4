@@ -7,7 +7,9 @@ Vue.component("login", {
     template: "#vue-login",
 
     props: [
-        "modalElement"
+        "modalElement",
+        "backlink",
+        "hasToForward"
     ],
 
     data: function()
@@ -32,26 +34,35 @@ Vue.component("login", {
          */
         sendLogin: function()
         {
-            var component = this;
+            var self = this;
 
             ApiService.post("/rest/customer/login", {email: this.username, password: this.password}, {supressNotifications: true})
                 .done(function(response)
                 {
                     ApiService.setToken(response);
 
-                    if (document.getElementById(component.modalElement) !== null)
+                    if (document.getElementById(self.modalElement) !== null)
                     {
-                        ModalService.findModal(document.getElementById(component.modalElement)).hide();
+                        ModalService.findModal(document.getElementById(self.modalElement)).hide();
                     }
 
-                    NotificationService.success(Translations.Callisto.accLoginSuccessful).closeAfter(3000);
+                    NotificationService.success(Translations.Callisto.accLoginSuccessful).closeAfter(10000);
+
+                    if (self.backlink !== null && self.backlink)
+                    {
+                        window.location = self.backlink;
+                    }
+                    else if (self.hasToForward)
+                    {
+                        window.location.pathname = "/";
+                    }
                 })
                 .fail(function(response)
                 {
                     switch (response.code)
                     {
                     case 401:
-                        NotificationService.error(Translations.Callisto.accLoginFailed).closeAfter(3000);
+                        NotificationService.error(Translations.Callisto.accLoginFailed).closeAfter(10000);
                         break;
                     default:
                         return;

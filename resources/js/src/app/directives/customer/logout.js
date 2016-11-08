@@ -9,23 +9,14 @@ Vue.directive("logout", function()
     $(this.el).click(
         function(event)
         {
-            ApiService.get("/rest/customer/logout")
+            ApiService.post("/rest/customer/logout")
                 .done(
                     function(response)
                     {
                         NotificationService.success(Translations.Callisto.accLogoutSuccessful).closeAfter(3000);
-
-                        // Remove the address IDs from the session after logout
-                        ApiService.post("/rest/customer/address_selection/0/?typeId=-1")
-                            .fail(function(error)
-                            {
-                                // console.warn(error);
-                            });
                     }
                 );
 
             event.preventDefault();
-
         });
-
 });
