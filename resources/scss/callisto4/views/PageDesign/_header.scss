@@ -74,18 +74,16 @@
 			//login | register
 			#login-change {
 				position:relative;
-				.open {
-					.dropdown-menu {
-						z-index: 2000;
-						a {
-							padding:1rem .8rem;
-							border:0;
-							border-top: 1px solid $gray-lighter;
-							display: block;
-							color: $brand-primary;
-							&:first-child {
-								border-top:0;
-							}
+				.dropdown-menu {
+					z-index: 2000;
+					a {
+						padding:1rem .8rem;
+						border:0;
+						border-top: 1px solid $gray-lighter;
+						display: block;
+						color: $brand-primary;
+						&:first-child {
+							border-top:0;
 						}
 					}
 				}
