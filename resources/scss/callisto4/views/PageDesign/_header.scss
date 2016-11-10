@@ -74,7 +74,7 @@
 			//login | register
 			#login-change {
 				position:relative;
-				&.open {
+				.open {
 					.dropdown-menu {
 						z-index: 2000;
 						a {
